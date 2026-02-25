@@ -8,12 +8,19 @@
     "version": "1.0.2",
     "type": "library",
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./accordion"
+        },
+        {
+            "type": "path",
+            "url": "./image-picker"
+        }
+    ],
     "require": {
-        "php": "^8.0",
-        "laravel/framework": "^10.0|^11.0|^12.0"        
-    },
-    "require-dev": {
-        
+        "mhshagor/accordion": "dev-main",
+        "mhshagor/image-picker": "dev-main"
     },
     "autoload": {
         "psr-4": {
@@ -40,6 +47,6 @@
             "pestphp/pest-plugin": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
