@@ -1,0 +1,53 @@
+{
+    "name": "mhshagor/accordion",
+    "description": "Accordion - Beautiful accordion for managing content",
+    "keywords": [
+        "laravel",
+        "accordion"
+    ],
+    "version": "1.0.2",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "laravel/framework": "^10.0|^11.0|^12.0"
+        
+    },
+    "require-dev": {
+        
+    },
+    "autoload": {
+        "psr-4": {
+            "Mhshagor\\Accordion\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mhshagor\\Accordion\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mhshagor\\Accordion\\Providers\\AccordionServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "M.H SHAGOR",
+            "email": "srq001100@gmail.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
