@@ -23,6 +23,13 @@
     },
     "scripts": {
         "test": "vendor/bin/pest"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mhshagor\\Package\\Providers\\PackagesServiceProvider"
+            ]
+        }
     },    
     "authors": [
         {
