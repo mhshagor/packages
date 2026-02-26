@@ -1,11 +1,11 @@
 <?php
 
-namespace Mhshagor\ImagePicker\Providers;
+namespace Mhshagor\Accordion\Providers;
 
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
-class ImagePickerServiceProvider extends ServiceProvider {
+class AccordionServiceProvider extends ServiceProvider {
     public function register(): void {
     }
 
