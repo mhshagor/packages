@@ -6,34 +6,61 @@ use Illuminate\Support\ServiceProvider;
 
 class PackagesServiceProvider extends ServiceProvider
 {
-    public function register(): void
+    protected $basePath = __DIR__ . '/../../';
+
+    protected $packages = [
+        'image-picker',
+        'accordion',
+    ];
+    
+    private function publishPackage($package)
     {
-        // Service providers will be auto-discovered from composer.json extra section
+        if($package === 'all') {
+            $this->publishAll();
+            return;
+        }
+        $paths = match($package) {
+            'image-picker' => $this->publishImagePicker($package),
+            'accordion' => $this->publishAccordion($package),
+            default => throw new \Exception("Unknown package: {$package}"),
+        };
+        
+        $this->publishes($paths, $package);
     }
 
-    public function boot(): void
+    private function publishAll()
     {
-        $imagePicker = [
-            __DIR__ . '/../../image-picker/components' => resource_path('views/components/sgd'),
-            __DIR__ . '/../../image-picker/js' => resource_path('js/sgd'),
-            __DIR__ . '/../../image-picker/css' => resource_path('css/sgd'),
+        $paths = [
+            ...$this->publishImagePicker('image-picker'),
+            ...$this->publishAccordion('accordion'),
         ];
-        $this->publishes([
-            ...$imagePicker,
-        ], 'image-picker');
+        
+        $this->publishes($paths, 'all');
+    }
 
-        $accordion = [
-            __DIR__ . '/../../accordion/components' => resource_path('views/components/sgd'),
-            __DIR__ . '/../../accordion/js' => resource_path('js/sgd'),
-            __DIR__ . '/../../accordion/css' => resource_path('css/sgd'),
+    private function publishImagePicker($package)
+    {
+        return [
+            $this->basePath . $package . '/components' => resource_path('views/components/sgd'),
+            $this->basePath . $package . '/js' => resource_path('js/sgd'),
+            $this->basePath . $package . '/css' => resource_path('css/sgd'),
         ];
-        $this->publishes([
-            ...$accordion,
-        ], 'accordion');
+    }
 
-        $this->publishes([
-            ...$imagePicker,
-            ...$accordion,
-        ], 'packages');
+    private function publishAccordion($package)
+    {
+        return [
+            $this->basePath . $package . '/components' => resource_path('views/components/sgd'),
+            $this->basePath . $package . '/js' => resource_path('js/sgd'),
+            $this->basePath . $package . '/css' => resource_path('css/sgd'),
+        ];
+    }    
+
+    public function boot()
+    {
+        foreach ($this->packages as $package) {
+            $this->publishPackage($package);
+        }
+        $this->publishAll();
     }
 }
