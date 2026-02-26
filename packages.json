@@ -1,0 +1,98 @@
+{
+    "packages": {
+        "mhshagor/accordion": {
+            "1.0.2": {
+                "name": "mhshagor/accordion",
+                "description": "Accordion - Beautiful accordion for managing content",
+                "version": "1.0.2",
+                "type": "library",
+                "license": "MIT",
+                "require": {
+                    "php": "^8.0",
+                    "laravel/framework": "^10.0|^11.0|^12.0"
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Mhshagor\\Accordion\\": "src/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Mhshagor\\Accordion\\Tests\\": "tests/"
+                    }
+                },
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Mhshagor\\Accordion\\Providers\\AccordionServiceProvider"
+                        ]
+                    }
+                },
+                "authors": [
+                    {
+                        "name": "M.H SHAGOR",
+                        "email": "srq001100@gmail.com"
+                    }
+                ],
+                "minimum-stability": "stable",
+                "prefer-stable": true,
+                "dist": {
+                    "url": "https://github.com/mhshagor/packages/archive/refs/tags/v1.0.2.zip",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "https://github.com/mhshagor/packages.git",
+                    "type": "git",
+                    "reference": "v1.0.2"
+                }
+            }
+        },
+        "mhshagor/image-picker": {
+            "1.0.2": {
+                "name": "mhshagor/image-picker",
+                "description": "Image Picker - Beautiful image picker for managing images",
+                "version": "1.0.2",
+                "type": "library",
+                "license": "MIT",
+                "require": {
+                    "php": "^8.0",
+                    "laravel/framework": "^10.0|^11.0|^12.0"
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Mhshagor\\ImagePicker\\": "src/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Mhshagor\\ImagePicker\\Tests\\": "tests/"
+                    }
+                },
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Mhshagor\\ImagePicker\\Providers\\ImagePickerServiceProvider"
+                        ]
+                    }
+                },
+                "authors": [
+                    {
+                        "name": "M.H SHAGOR",
+                        "email": "srq001100@gmail.com"
+                    }
+                ],
+                "minimum-stability": "stable",
+                "prefer-stable": true,
+                "dist": {
+                    "url": "https://github.com/mhshagor/packages/archive/refs/tags/v1.0.2.zip",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "https://github.com/mhshagor/packages.git",
+                    "type": "git",
+                    "reference": "v1.0.2"
+                }
+            }
+        }
+    }
+}
