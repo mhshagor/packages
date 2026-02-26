@@ -8,8 +8,20 @@
     "version": "1.0.2",
     "type": "library",
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./accordion"
+        },
+        {
+            "type": "path", 
+            "url": "./image-picker"
+        }
+    ],
     "require": {
-        "php": "^8.0"
+        "php": "^8.0",
+        "mhshagor/accordion": "dev-main",
+        "mhshagor/image-picker": "dev-main"
     },
     "autoload": {
         "psr-4": {
