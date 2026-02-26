@@ -334,13 +334,15 @@ resources/
         ├── image-picker.css
         └── accordion.css
 
-## 📁 Published Demo
-views/
-└── sgd/
-    ├── image-picker/
-    │   └── index.html
-    └── accordion/
-        └── index.html
+📁 Published Demo
+resources/
+└── views/
+    └── sgd/
+        ├── image-picker/
+        │   └── index.html
+        └── accordion/
+            └── index.html
+
 ```
 
 ---
