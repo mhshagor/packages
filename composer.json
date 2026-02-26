@@ -8,16 +8,6 @@
     "version": "1.0.2",
     "type": "library",
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./accordion"
-        },
-        {
-            "type": "path", 
-            "url": "./image-picker"
-        }
-    ],
     "require": {
         "php": "^8.0"
     },
