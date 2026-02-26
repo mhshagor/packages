@@ -6,9 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 class PackagesServiceProvider extends ServiceProvider {
     public function register(): void {
-        // Register image-picker service provider
-        $this->app->register(\Mhshagor\ImagePicker\Providers\ImagePickerServiceProvider::class);
-        $this->app->register(\Mhshagor\Accordion\Providers\AccordionServiceProvider::class);
+        // Service providers will be auto-discovered from composer.json extra section
     }
 
     public function boot(): void {

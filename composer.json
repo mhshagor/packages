@@ -19,9 +19,7 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "mhshagor/accordion": "dev-main",
-        "mhshagor/image-picker": "dev-main"
+        "php": "^8.0"
     },
     "autoload": {
         "psr-4": {
