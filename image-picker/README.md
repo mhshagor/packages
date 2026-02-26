@@ -17,9 +17,7 @@ A beautiful and customizable image picker component for Laravel applications wit
 ### 1. Install the package
 
 ```bash
-composer require mhshagor/image-picker:dev-main
-# or
-composer require mhshagor/image-picker
+composer require mhshagor/packages:image-picker
 ```
 
 ### 2. Publish the assets
@@ -33,7 +31,7 @@ php artisan vendor:publish --tag=image-picker
 Add this line to your `resources/js/app.js`:
 
 ```javascript
-import "./sqd/image-picker.js";
+import "./sgd/image-picker.js";
 ```
 
 ### Add to your app.css
@@ -41,7 +39,7 @@ import "./sqd/image-picker.js";
 Add this line to your `resources/css/app.css`:
 
 ```css
-@import "./sqd/image-picker.css";
+@import "./sgd/image-picker.css";
 ```
 
 ### 4. Compile your assets
@@ -212,7 +210,7 @@ public function store(Request $request)
 If you want to customize the component, you can modify the published files:
 
 - **Views**: `resources/views/components/sgd/form/image-picker.blade.php`
-- **JavaScript**: `resources/js/sqd/image-picker.js`
+- **JavaScript**: `resources/js/sgd/image-picker.js`
 
 ### Custom Styling
 

@@ -163,16 +163,14 @@ document.addEventListener("DOMContentLoaded", () => {
         addFiles(newFiles) {
             newFiles.forEach((file) => {
                 if (this.type === "image" && !file.type.startsWith("image/")) {
-                    showToast(
-                        "error",
+                    this.showError(
                         `Invalid file type. ${file.name} is not an image.`,
                     );
                     return;
                 }
 
                 if (file.size / 1024 / 1024 > this.maxSizeMB) {
-                    showToast(
-                        "error",
+                    this.showError(
                         `File ${file.name} is too large. Max ${this.maxSizeMB}MB.`,
                     );
                     return;

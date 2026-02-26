@@ -17,7 +17,7 @@ A beautiful and customizable accordion component for Laravel applications with s
 ### 1. Install the package
 
 ```bash
-composer require mhshagor/accordion
+composer require mhshagor/packages:accordion
 ```
 
 ### 2. Publish the assets

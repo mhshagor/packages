@@ -1,3 +1,6 @@
+.relative {
+  position: relative;
+}
 /* DROP AREA */
 .drop-area {
   border: 1px dashed #d1d5db;

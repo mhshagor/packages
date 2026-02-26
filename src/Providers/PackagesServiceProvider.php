@@ -41,6 +41,7 @@ class PackagesServiceProvider extends ServiceProvider
     private function publishImagePicker($package)
     {
         return [
+            $this->basePath . $package . '/demo' => resource_path('views/sgd'),
             $this->basePath . $package . '/components' => resource_path('views/components/sgd'),
             $this->basePath . $package . '/js' => resource_path('js/sgd'),
             $this->basePath . $package . '/css' => resource_path('css/sgd'),
@@ -50,6 +51,7 @@ class PackagesServiceProvider extends ServiceProvider
     private function publishAccordion($package)
     {
         return [
+            $this->basePath . $package . '/demo' => resource_path('views/sgd'),
             $this->basePath . $package . '/components' => resource_path('views/components/sgd'),
             $this->basePath . $package . '/js' => resource_path('js/sgd'),
             $this->basePath . $package . '/css' => resource_path('css/sgd'),
