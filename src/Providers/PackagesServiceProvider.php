@@ -3,13 +3,15 @@
 namespace Mhshagor\Package\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\File;
 
 class PackagesServiceProvider extends ServiceProvider
 {
     protected $basePath = __DIR__ . '/../../';
 
     protected $packages = [
-        'image-picker',
+        'file-picker',
         'accordion',
     ];
     
@@ -20,7 +22,7 @@ class PackagesServiceProvider extends ServiceProvider
             return;
         }
         $paths = match($package) {
-            'image-picker' => $this->publishImagePicker($package),
+            'file-picker' => $this->publishFilePicker($package),
             'accordion' => $this->publishAccordion($package),
             default => throw new \Exception("Unknown package: {$package}"),
         };
@@ -31,14 +33,14 @@ class PackagesServiceProvider extends ServiceProvider
     private function publishAll()
     {
         $paths = [
-            ...$this->publishImagePicker('image-picker'),
+            ...$this->publishFilePicker('file-picker'),
             ...$this->publishAccordion('accordion'),
         ];
         
         $this->publishes($paths, 'all');
     }
 
-    private function publishImagePicker($package)
+    private function publishFilePicker($package)
     {
         return [
             $this->basePath . $package . '/demo' => resource_path('views/sgd'),
@@ -64,5 +66,10 @@ class PackagesServiceProvider extends ServiceProvider
             $this->publishPackage($package);
         }
         $this->publishAll();
+    }
+    
+    public function register()
+    {
+        // Components will be auto-discovered via Laravel's component discovery
     }
 }

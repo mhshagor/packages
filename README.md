@@ -4,12 +4,12 @@ A comprehensive Laravel package collection containing beautiful, reusable compon
 
 ## Available Packages
 
-### 📦 Image Picker
-A beautiful and customizable image picker component with drag-and-drop support, multiple preview types, and file validation.
+### 📦 File Picker
+A beautiful and customizable file picker component with drag-and-drop support, multiple preview types, and file validation.
 
 **Installation:**
 ```bash
-composer require mhshagor/packages:image-picker
+composer require mhshagor/packages:file-picker
 ```
 
 **Features:**
@@ -22,12 +22,12 @@ composer require mhshagor/packages:image-picker
 
 **Usage:**
 ```blade
-<x-sgd.image-picker 
-    name="profile_image" 
-    label="Profile Image"
+<x-sgd.file-picker 
+    name="profile_file" 
+    label="Profile File"
     :multiple="true"
     max="10"
-    type="image"
+    type="file"
     preview-type="grid"
 />
 ```
@@ -68,14 +68,14 @@ composer require mhshagor/packages:accordion
 ### 1. Install Packages
 
 ```bash
-# Install Image Picker
-composer require mhshagor/packages:image-picker
+# Install File Picker
+composer require mhshagor/packages:file-picker
 
 # Install Accordion
 composer require mhshagor/packages:accordion
 
 # Install both packages
-composer require mhshagor/packages:image-picker mhshagor/packages:accordion
+composer require mhshagor/packages:file-picker mhshagor/packages:accordion
 
 # Install complete package collection
 composer require mhshagor/packages
@@ -84,8 +84,8 @@ composer require mhshagor/packages
 ### 2. Publish Assets
 
 ```bash
-# Publish Image Picker assets
-php artisan vendor:publish --tag=image-picker
+# Publish File Picker assets
+php artisan vendor:publish --tag=file-picker
 
 # Publish Accordion assets
 php artisan vendor:publish --tag=accordion
@@ -98,13 +98,13 @@ php artisan vendor:publish --tag=all
 
 **Add to `resources/js/app.js`:**
 ```javascript
-import "./sgd/image-picker.js";
+import "./sgd/file-picker.js";
 import "./sgd/accordion.js";
 ```
 
 **Add to `resources/css/app.css`:**
 ```css
-@import "./sgd/image-picker.css";
+@import "./sgd/file-picker.css";
 @import "./sgd/accordion.css";
 ```
 
@@ -120,11 +120,11 @@ npm run build
 
 ## 🎨 Component Examples
 
-### Image Picker Gallery
+### File Picker Gallery
 
 ```blade
 {{-- User Profile --}}
-<x-sgd.image-picker 
+<x-sgd.file-picker 
     name="avatar" 
     label="Profile Avatar"
     :multiple="false"
@@ -135,7 +135,7 @@ npm run build
 />
 
 {{-- Photo Gallery --}}
-<x-sgd.image-picker 
+<x-sgd.file-picker 
     name="gallery" 
     label="Photo Gallery"
     :multiple="true"
@@ -145,7 +145,7 @@ npm run build
 />
 
 {{-- Document Upload --}}
-<x-sgd.image-picker 
+<x-sgd.file-picker 
     name="documents" 
     label="Upload Documents"
     :multiple="true"
@@ -217,14 +217,14 @@ npm run build
 ### Custom Styling
 
 ```css
-/* Custom Image Picker Styles */
-.image-picker {
+/* Custom File Picker Styles */
+.file-picker {
     border: 2px dashed #3b82f6;
     border-radius: 8px;
     background: #f8fafc;
 }
 
-.image-picker .base-label {
+.file-picker .base-label {
     color: #1e293b;
     font-weight: 600;
 }
@@ -246,12 +246,12 @@ npm run build
 ### JavaScript Events
 
 ```javascript
-// Image Picker Events
-document.addEventListener('imagePicker:fileAdded', (event) => {
+// File Picker Events
+document.addEventListener('filePicker:fileAdded', (event) => {
     console.log('File added:', event.detail.file);
 });
 
-document.addEventListener('imagePicker:fileRemoved', (event) => {
+document.addEventListener('filePicker:fileRemoved', (event) => {
     console.log('File removed:', event.detail.fileId);
 });
 
@@ -269,10 +269,10 @@ document.addEventListener('accordion:closed', (event) => {
 
 ## 🔧 Configuration Options
 
-### Image Picker Full Configuration
+### File Picker Full Configuration
 
 ```blade
-<x-sgd.image-picker 
+<x-sgd.file-picker 
     name="files"
     id="custom-file-picker"
     label="Upload Files"
@@ -323,22 +323,22 @@ resources/
 │   └── components/
 │       └── sgd/
 │           ├── form/
-│           │   └── image-picker.blade.php
+│           │   └── file-picker.blade.php
 │           └── accordion.blade.php
 ├── js/
 │   └── sgd/
-│       ├── image-picker.js
+│       ├── file-picker.js
 │       └── accordion.js
 └── css/
     └── sgd/
-        ├── image-picker.css
+        ├── file-picker.css
         └── accordion.css
 
 📁 Published Demo
 resources/
 └── views/
     └── sgd/
-        ├── image-picker/
+        ├── file-picker/
         │   └── index.html
         └── accordion/
             └── index.html
@@ -352,8 +352,8 @@ resources/
 All components use the `sgd` namespace:
 
 ```blade
-<!-- Image Picker -->
-<x-sgd.image-picker />
+<!-- File Picker -->
+<x-sgd.file-picker />
 
 <!-- Accordion -->
 <x-sgd.accordion />
@@ -384,7 +384,7 @@ You can customize any component by modifying the published files:
 
 ## 🌟 Features Overview
 
-| Feature | Image Picker | Accordion |
+| Feature | File Picker | Accordion |
 |----------|---------------|------------|
 | Drag & Drop | ✅ | ❌ |
 | Multiple Preview Types | ✅ | ❌ |

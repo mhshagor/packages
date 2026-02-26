@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Picker Component Demo</title>
-    <link rel="stylesheet" href="css/image-picker.css" />
+    <title>File Picker Component Demo</title>
+    <link rel="stylesheet" href="../css/file-picker.css" />
     <style>
         * {
             margin: 0;
@@ -142,7 +142,7 @@
             Thumbnail Preview <small class="text-xs text-gray-500">(Max 2 MB)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="thumbnail_picker"
             data-id="thumbnail_picker"
             data-max="2"
@@ -162,7 +162,7 @@
             Grid Preview <small class="text-xs text-gray-500">(Max 5 MB)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="grid_picker"
             data-id="grid_picker"
             data-max="5"
@@ -182,7 +182,7 @@
             List Preview <small class="text-xs text-gray-500">(Max 3 MB)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="list_picker"
             data-id="list_picker"
             data-max="3"
@@ -202,7 +202,7 @@
             Dropdown Preview <small class="text-xs text-gray-500">(Max 4 MB)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="dropdown_picker"
             data-id="dropdown_picker"
             data-max="4"
@@ -218,11 +218,11 @@
       <div class="demo-section">
         <h2>Required Field with Error</h2>
         <div class="space-y-1">
-          <label for="required_picker" class="base-label required text-red-500">
+          <label for="required_picker" class="sgd-base-label sgd-required sgd-text-red-500">
             Required Image <small class="text-xs text-red-500">(Max 2 MB)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="required_picker"
             data-id="required_picker"
             data-max="2"
@@ -232,7 +232,7 @@
             data-preview="true"
             data-preview-type="thumbnail"
           ></div>
-          <p class="text-red-500 text-xs mt-1">This field is required.</p>
+          <p class="sgd-text-red-500 sgd-text-xs sgd-mt-1">This field is required.</p>
         </div>
       </div>
 
@@ -243,7 +243,7 @@
             All File Types <small class="text-xs text-gray-500">(Max 5 MB)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="file_all_picker"
             data-id="file_all_picker"
             data-max="5"
@@ -263,7 +263,7 @@
             Documents Only <small class="text-xs text-gray-500">(Max 3 MB)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="file_doc_picker"
             data-id="file_doc_picker"
             data-max="3"
@@ -283,7 +283,7 @@
             Upload Files <small class="text-xs text-gray-500">(Max 10 MB)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="file_no_preview_picker"
             data-id="file_no_preview_picker"
             data-max="10"
@@ -303,7 +303,7 @@
             Single File <small class="text-xs text-gray-500">(Max 1 MB)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="single_file_picker"
             data-id="single_file_picker"
             data-max="1"
@@ -323,7 +323,7 @@
             High-Resolution Images <small class="text-xs text-gray-500">(Max 20 MB)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="large_images_picker"
             data-id="large_images_picker"
             data-max="20"
@@ -343,7 +343,7 @@
             Media Files (Images & Videos) <small class="text-xs text-gray-500">(Max 15 MB)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="media_picker"
             data-id="media_picker"
             data-max="15"
@@ -363,7 +363,7 @@
             Archive Files <small class="text-xs text-gray-500">(Max 50 MB)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="archive_picker"
             data-id="archive_picker"
             data-max="50"
@@ -383,7 +383,7 @@
             Custom Rules <small class="text-xs text-gray-500">(Max 2 MB, PNG/JPG only)</small>
           </label>
           <div 
-            class="image-picker"
+            class="file-picker"
             data-name="custom_picker"
             data-id="custom_picker"
             data-max="2"
@@ -397,10 +397,10 @@
       </div>
 
       <div class="footer">
-        <p>© 2026 Image Picker Component • Built with ❤️ for Laravel</p>
+        <p>© 2026 File Picker Component • Built with ❤️ for Laravel</p>
       </div>
     </div>
 
-    <script src="js/image-picker.js"></script>
+    <script src="../js/file-picker.js"></script>
   </body>
 </html>

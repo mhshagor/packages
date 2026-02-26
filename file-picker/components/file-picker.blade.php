@@ -39,7 +39,7 @@
         //$value = $multiple ? $imagesArray : $singleImage;
     @endphp
     <div
-        {{ $attributes->merge(['class' => 'image-picker ']) }}
+        {{ $attributes->merge(['class' => 'file-picker ']) }}
         data-name="{{ $name }}"
         data-id="{{ $id }}"
         data-max="{{ $max }}"
