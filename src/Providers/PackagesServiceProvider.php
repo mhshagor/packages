@@ -4,22 +4,36 @@ namespace Mhshagor\Package\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class PackagesServiceProvider extends ServiceProvider {
-    public function register(): void {
+class PackagesServiceProvider extends ServiceProvider
+{
+    public function register(): void
+    {
         // Service providers will be auto-discovered from composer.json extra section
     }
 
-    public function boot(): void {
+    public function boot(): void
+    {
+        $imagePicker = [
+            __DIR__ . '/../../image-picker/components' => resource_path('views/components/sgd'),
+            __DIR__ . '/../../image-picker/js' => resource_path('js/sgd'),
+            __DIR__ . '/../../image-picker/css' => resource_path('css/sgd'),
+        ];
         $this->publishes([
-            __DIR__.'/../../image-picker/resources/views/components' => resource_path('views/components/sgd'),
-            __DIR__.'/../../image-picker/resources/js' => resource_path('js/sgd'),
-            __DIR__.'/../../image-picker/resources/css' => resource_path('css/sgd'),
+            ...$imagePicker,
         ], 'image-picker');
 
+        $accordion = [
+            __DIR__ . '/../../accordion/components' => resource_path('views/components/sgd'),
+            __DIR__ . '/../../accordion/js' => resource_path('js/sgd'),
+            __DIR__ . '/../../accordion/css' => resource_path('css/sgd'),
+        ];
         $this->publishes([
-            __DIR__.'/../../accordion/resources/views/components' => resource_path('views/components/sgd'),
-            __DIR__.'/../../accordion/resources/js' => resource_path('js/sgd'),
-            __DIR__.'/../../accordion/resources/css' => resource_path('css/sgd'),
+            ...$accordion,
         ], 'accordion');
+
+        $this->publishes([
+            ...$imagePicker,
+            ...$accordion,
+        ], 'packages');
     }
 }
