@@ -13,6 +13,7 @@ class PackagesServiceProvider extends ServiceProvider
     protected $packages = [
         'file-picker',
         'accordion',
+        'dynamic-table',
     ];
     
     private function publishPackage($package)
@@ -24,6 +25,7 @@ class PackagesServiceProvider extends ServiceProvider
         $paths = match($package) {
             'file-picker' => $this->publishFilePicker($package),
             'accordion' => $this->publishAccordion($package),
+            'dynamic-table' => $this->publishDynamicTable($package),
             default => throw new \Exception("Unknown package: {$package}"),
         };
         
@@ -35,6 +37,7 @@ class PackagesServiceProvider extends ServiceProvider
         $paths = [
             ...$this->publishFilePicker('file-picker'),
             ...$this->publishAccordion('accordion'),
+            ...$this->publishDynamicTable('dynamic-table'),
         ];
         
         $this->publishes($paths, 'all');
@@ -51,6 +54,15 @@ class PackagesServiceProvider extends ServiceProvider
     }
 
     private function publishAccordion($package)
+    {
+        return [
+            $this->basePath . $package . '/demo' => resource_path('views/sgd'),
+            $this->basePath . $package . '/components' => resource_path('views/components/sgd'),
+            $this->basePath . $package . '/js' => resource_path('js/sgd'),
+            $this->basePath . $package . '/css' => resource_path('css/sgd'),
+        ];
+    }    
+    private function publishDynamicTable($package)
     {
         return [
             $this->basePath . $package . '/demo' => resource_path('views/sgd'),

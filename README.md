@@ -4,6 +4,39 @@ A comprehensive Laravel package collection containing beautiful, reusable compon
 
 ## Available Packages
 
+### 📦 Dynamic Table
+A powerful and flexible dynamic table component with add, clone, and delete row functionality, smooth animations, and modern Tailwind CSS styling.
+
+**Installation:**
+```bash
+composer require mhshagor/packages:dynamic-table
+```
+
+**Features:**
+- ➕ Dynamic Row Management - Add, clone, and delete table rows on the fly
+- 🎨 Modern Styling - Beautiful Tailwind CSS design with dark mode support
+- ⚡ Smooth Animations - CSS transitions for elegant row operations
+- 🔄 Automatic Reindexing - Form field names update automatically when rows are added/removed
+- 📱 Responsive Design - Works perfectly on all device sizes
+- 🎯 Smart Validation - Prevents deletion of the last row
+- 🔧 Easy Integration - Simple Blade component and JavaScript setup
+- 📦 Zero Dependencies - Pure JavaScript, no external libraries required
+
+**Usage:**
+```blade
+<x-dynamic-table :th="['Name', 'Email', 'Role']" id="userTable">
+    <input type="text" name="users[0][name]" placeholder="Name" class="w-full p-2 border border-gray-300 rounded-md" />
+    <input type="email" name="users[0][email]" placeholder="Email" class="w-full p-2 border border-gray-300 rounded-md" />
+    <select name="users[0][role]" class="w-full p-2 border border-gray-300 rounded-md">
+        <option value="">Select role</option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+    </select>
+</x-dynamic-table>
+```
+
+---
+
 ### 📦 File Picker
 A beautiful and customizable file picker component with drag-and-drop support, multiple preview types, and file validation.
 
@@ -74,8 +107,11 @@ composer require mhshagor/packages:file-picker
 # Install Accordion
 composer require mhshagor/packages:accordion
 
-# Install both packages
-composer require mhshagor/packages:file-picker mhshagor/packages:accordion
+# Install Dynamic Table
+composer require mhshagor/packages:dynamic-table
+
+# Install all packages
+composer require mhshagor/packages:file-picker mhshagor/packages:accordion mhshagor/packages:dynamic-table
 
 # Install complete package collection
 composer require mhshagor/packages
@@ -90,6 +126,9 @@ php artisan vendor:publish --tag=file-picker
 # Publish Accordion assets
 php artisan vendor:publish --tag=accordion
 
+# Publish Dynamic Table assets
+php artisan vendor:publish --tag=dynamic-table
+
 # Publish all packages
 php artisan vendor:publish --tag=all
 ```
@@ -100,12 +139,14 @@ php artisan vendor:publish --tag=all
 ```javascript
 import "./sgd/file-picker.js";
 import "./sgd/accordion.js";
+import "./sgd/dynamic-table.js";
 ```
 
 **Add to `resources/css/app.css`:**
 ```css
 @import "./sgd/file-picker.css";
 @import "./sgd/accordion.css";
+@import "./sgd/dynamic-table.css";
 ```
 
 ### 4. Compile Assets
@@ -384,17 +425,19 @@ You can customize any component by modifying the published files:
 
 ## 🌟 Features Overview
 
-| Feature | File Picker | Accordion |
-|----------|---------------|------------|
-| Drag & Drop | ✅ | ❌ |
-| Multiple Preview Types | ✅ | ❌ |
-| File Validation | ✅ | ❌ |
-| Color Themes | ❌ | ✅ |
-| Smooth Animations | ✅ | ✅ |
-| Responsive Design | ✅ | ✅ |
-| Laravel Integration | ✅ | ✅ |
-| Zero Dependencies | ✅ | ✅ |
-| Accessibility Support | ✅ | ✅ |
+| Feature | Dynamic Table | File Picker | Accordion |
+|----------|---------------|------------|------------|
+| Dynamic Row Management | ✅ | ❌ | ❌ |
+| Drag & Drop | ❌ | ✅ | ❌ |
+| Multiple Preview Types | ❌ | ✅ | ❌ |
+| File Validation | ❌ | ✅ | ❌ |
+| Color Themes | ✅ | ❌ | ✅ |
+| Smooth Animations | ✅ | ✅ | ✅ |
+| Responsive Design | ✅ | ✅ | ✅ |
+| Laravel Integration | ✅ | ✅ | ✅ |
+| Zero Dependencies | ✅ | ✅ | ✅ |
+| Accessibility Support | ✅ | ✅ | ✅ |
+| Form Field Reindexing | ✅ | ❌ | ❌ |
 
 ---
 
