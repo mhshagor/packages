@@ -1,6 +1,6 @@
 <?php
 
-namespace Mhshagor\Package\Providers;
+namespace Mhshagor\LaravelComponents\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
