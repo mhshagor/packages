@@ -57,7 +57,7 @@ class PackagesServiceProvider extends ServiceProvider
             $this->basePath . '/components' => resource_path('views/components'),
             $this->basePath . '/asset/js' => resource_path('js/sgd'),
             $this->basePath . '/asset/css' => resource_path('css/sgd'),
-            $this->basePath . '/demo' => public_path('sgd'),
+            $this->basePath . '/demo' => resource_path('views/sgd'),
         ];
     }    
 
