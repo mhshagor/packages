@@ -27,7 +27,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mhshagor\\LaravelComponents\\Providers\\PackagesServiceProvider"
+                "Mhshagor\\LaravelComponents\\src\\Providers\\PackagesServiceProvider"
             ]
         }
     },    
