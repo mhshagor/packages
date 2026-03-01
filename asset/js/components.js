@@ -164,3 +164,119 @@ function getContrastColor(color) {
 
 // Initialize on DOM ready
 document.addEventListener("DOMContentLoaded", () => initAccordions());
+
+
+// date time picker
+document.addEventListener("DOMContentLoaded", () => {
+    /* MAIN FUNCTION */
+    function initPicker(selector, defaults) {
+        document.querySelectorAll(selector).forEach((el) => {
+            if (el._flatpickr) return;
+
+            flatpickr(el, {
+                ...defaults,
+                dateFormat: el.dataset.format ?? defaults.dateFormat,
+                altFormat: el.dataset.alt ?? defaults.altFormat,
+                minDate: el.min || null,
+                maxDate: el.max || null,
+                disable: [
+                    {
+                        from: el.dataset.disableFrom ?? null,
+                        to: el.dataset.disableTo ?? null,
+                    },
+                ],
+            });
+        });
+    }
+
+    /* TIME RANGE */
+    function initTimeRanges(selector, defaults) {
+        const allPairs = {};
+
+        // Group inputs by data-pair
+        document.querySelectorAll(selector).forEach((el) => {
+            const pairId = el.dataset.pair;
+            if (!pairId) return;
+
+            if (!allPairs[pairId]) allPairs[pairId] = [];
+            allPairs[pairId].push(el);
+        });
+
+        // Initialize each pair
+        Object.values(allPairs).forEach((pair) => {
+            const [startEl, endEl] = pair;
+            if (!startEl || !endEl) return;
+            if (startEl._flatpickr) return;
+
+            flatpickr(startEl, {
+                ...defaults,
+                dateFormat: startEl.dataset.format ?? defaults.dateFormat,
+                altFormat: startEl.dataset.alt ?? defaults.altFormat,
+                onChange(selectedDates) {
+                    if (endEl?._flatpickr && selectedDates[0]) {
+                        endEl._flatpickr.set("minTime", selectedDates[0]);
+                    }
+                },
+            });
+
+            flatpickr(endEl, {
+                ...defaults,
+                dateFormat: endEl.dataset.format ?? defaults.dateFormat,
+                altFormat: endEl.dataset.alt ?? defaults.altFormat,
+                onChange(selectedDates) {
+                    if (startEl?._flatpickr && selectedDates[0]) {
+                        startEl._flatpickr.set("maxTime", selectedDates[0]);
+                    }
+                },
+            });
+
+            // Optional: sync initial values if pre-filled
+            if (startEl.value && endEl.value) {
+                endEl._flatpickr.set(
+                    "minTime",
+                    startEl._flatpickr.selectedDates[0] || null,
+                );
+                startEl._flatpickr.set(
+                    "maxTime",
+                    endEl._flatpickr.selectedDates[0] || null,
+                );
+            }
+        });
+    }
+
+    /* DATE */
+    initPicker(".datePicker", {
+        dateFormat: "d/m/Y",
+        altFormat: "d/m/Y",
+    });
+
+    /* TIME */
+    initPicker(".timePicker", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "h:i K",
+        altFormat: "h:i K",
+    });
+
+    /* DATETIME */
+    initPicker(".dateTimePicker", {
+        enableTime: true,
+        dateFormat: "d/m/Y h:i K",
+        altFormat: "d/m/Y h:i K",
+    });
+
+    /* DATE RANGE */
+    initPicker(".dateRange", {
+        mode: "range",
+        dateFormat: "d/m/Y",
+        altFormat: "d/m/Y",
+    });
+
+    /* TIME RANGE */
+    initTimeRanges(".timeRange", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "h:i K",
+        altFormat: "h:i K",
+    });
+});

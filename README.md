@@ -70,6 +70,7 @@ resources/views/components/
 resources/js/sgd/
 ├── components.js
 └── file-picker.js
+└── date-time-picker.js
 ```
 
 - **CSS assets**
@@ -78,6 +79,7 @@ resources/js/sgd/
 resources/css/sgd/
 ├── components.css
 └── file-picker.css
+└── date-time-picker.css
 ```
 
 - **Demo templates**
@@ -200,6 +202,7 @@ After publishing, import the JS/CSS in your app.
 // resources/js/app.js
 import "./sgd/components.js";
 import "./sgd/file-picker.js";
+import "./sgd/date-time-picker.js";
 ```
 
 ### CSS
@@ -208,6 +211,7 @@ import "./sgd/file-picker.js";
 /* resources/css/app.css */
 @import "./sgd/components.css";
 @import "./sgd/file-picker.css";
+@import "./sgd/date-time-picker.css";
 ```
 
 ---
