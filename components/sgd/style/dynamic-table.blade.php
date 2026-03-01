@@ -1,21 +1,31 @@
 @props(['th' => [], 'id' => ''])
 @php
-$theadTh = 'whitespace-nowrap font-medium text-sm border-b dark:border-black/30 border-gray-300 text-center';
+    $theadTh = 'whitespace-nowrap font-medium text-sm border-b dark:border-black/30 border-gray-300 text-center';
 @endphp
-<table class="w-full dynamicTable border border-gray-300 dark:border-black/30" id="{{ $id }}">
+<table
+    class="w-full dynamicTable border border-gray-300 dark:border-black/30"
+    id="{{ $id }}"
+>
     <thead class="bg-black/30">
         <tr>
-            <th class="{{ $theadTh }}">
+            <th
+                class="{{ $theadTh }}"
+                width="2%"
+            >
                 #
             </th>
             @foreach ($th as $header)
-            <th class="{{ $theadTh }}">
-                {{ $header }}
-            </th>
+                <th class="{{ $theadTh }}">
+                    {{ $header }}
+                </th>
             @endforeach
-            <th class="{{ $theadTh }}" width="0.5%">
+            <th
+                class="{{ $theadTh }}"
+                width="0.5%"
+            >
                 <button
-                    class="addRow bg-indigo-600 dark:bg-indigo-500 hover:bg-indigo-500 dark:hover:bg-indigo-400 rounded-md p-2 text-center font-semibold text-white shadow-sm transition-colors duration-200 flex items-center justify-center h-8 w-8 m-0.5">
+                    class="addRow bg-indigo-600 dark:bg-indigo-500 hover:bg-indigo-500 dark:hover:bg-indigo-400 rounded-md p-2 text-center font-semibold text-white shadow-sm transition-colors duration-200 flex items-center justify-center h-8 w-8 m-0.5"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -40,7 +50,8 @@ $theadTh = 'whitespace-nowrap font-medium text-sm border-b dark:border-black/30 
             {{ $slot }}
             <td>
                 <button
-                    class="deleteRow bg-red-600 dark:bg-red-500 hover:bg-red-500 dark:hover:bg-red-400 rounded-md p-2 text-center font-semibold text-white shadow-sm transition-colors duration-200 flex items-center justify-center h-8 w-8 m-0.5">
+                    class="deleteRow bg-red-600 dark:bg-red-500 hover:bg-red-500 dark:hover:bg-red-400 rounded-md p-2 text-center font-semibold text-white shadow-sm transition-colors duration-200 flex items-center justify-center h-8 w-8 m-0.5"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
