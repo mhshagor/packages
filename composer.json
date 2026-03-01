@@ -1,9 +1,9 @@
 {   
-    "name": "mhshagor/packages",
-    "description": "Package - Beautiful package for managing packages",
+    "name": "mhshagor/laravel-components",
+    "description": "Laravel Components - Beautiful components for Laravel",
     "keywords": [
         "laravel",
-        "package"
+        "components"
     ],
     "version": "1.0.2",
     "type": "library",
@@ -13,12 +13,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Mhshagor\\Package\\": "src/"
+            "Mhshagor\\LaravelComponents\\": "src/"
         }
     },
     "autoload-dev": {
 "psr-4": {
-            "Mhshagor\\Package\\Tests\\": "tests/"
+            "Mhshagor\\LaravelComponents\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -27,7 +27,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mhshagor\\Package\\Providers\\PackagesServiceProvider"
+                "Mhshagor\\LaravelComponents\\Providers\\PackagesServiceProvider"
             ]
         }
     },    
