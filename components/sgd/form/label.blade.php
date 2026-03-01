@@ -3,5 +3,5 @@
     for="{{ $for }}"
     class="block text-sm/6 font-semibold text-gray-600 dark:text-gray-100"
 >
-    {{ headline(__($text)) }}
+    {{ Str::headline(__($text)) }}
 </label>

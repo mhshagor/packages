@@ -2,7 +2,7 @@
     <x-sgd.form method="delete">
         <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
             <h3 class="text-base font-semibold leading-6 text-gray-900 mb-4" id="modal-title">
-                Delete Item
+                {{ Str::headline('Delete Item') }}
             </h3>
             <p>Are you sure you want to delete this item?</p>
         </div>

@@ -24,7 +24,7 @@
             for="{{ $id }}"
             class="base-label {{ $labelClass }}"
         >
-            {{ headline($label) }}
+            {{ Str::headline($label) }}
         </label>
     @endif
 

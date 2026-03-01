@@ -25,7 +25,7 @@
             for="{{ $id }}"
             class="base-label {{ $labelClass }}"
         >
-            {{ headline($label) }} <small
+            {{ Str::headline($label) }} <small
                 class="text-xs {{ $errors->has($name) ? ' text-red-500' : 'text-gray-500' }}">(Max {{ $max }}
                 MB)</small>
         </label>

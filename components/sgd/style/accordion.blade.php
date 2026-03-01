@@ -16,7 +16,7 @@
             class="sgd-accordion-btn"
             data-default="{{ $open ? 'true' : 'false' }}"
         >
-            <span class="">{{ $title }}</span>
+            <span class="">{{ Str::headline($title) }}</span>
             <svg
                 class="sgd-accordion-icon"
                 fill="none"

@@ -18,33 +18,33 @@
              class="border-r dark:border-black/10 border-gray-300 {{ $thclass }} !text-center"
              width="2%"
          >
-             Sl
+             {{ Str::headline('Sl') }}
          </th>
          @foreach ($headers as $header)
              <th
                  id="{{ $thid }}"
                  class="{{ $thclass }}"
              >
-                 {{ headline($header) }}
+                 {{ Str::headline($header) }}
              </th>
          @endforeach
          <th
              class="{{ $thclass }} !text-center"
              width="5%"
          >
-             Status
+             {{ Str::headline('Status') }}
          </th>
          {{--  <th class="{{ $thclass }} !text-center" width="5%">
-             Created By
+             {{ Str::headline('Created By') }}
          </th>
          <th class="{{ $thclass }} !text-center" width="5%">
-             Created At
+             {{ Str::headline('Created At') }}
          </th> --}}
          <th
              class="border-l dark:border-black/10 border-gray-300 {{ $thclass }} !text-center"
              width="5%"
          >
-             Actions
+             {{ Str::headline('Actions') }}
          </th>
      </tr>
  </thead>

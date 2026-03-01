@@ -24,7 +24,7 @@
             </div>
         </div>
         @if ($label)
-            <span class="ml-2 select-none">{{ $label }}</span>
+            <span class="ml-2 select-none">{{ Str::headline($label) }}</span>
         @endif
     </label>
 </div>

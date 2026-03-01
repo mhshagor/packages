@@ -16,7 +16,7 @@
             </th>
             @foreach ($th as $header)
                 <th class="{{ $theadTh }}">
-                    {{ $header }}
+                    {{ Str::headline($header) }}
                 </th>
             @endforeach
             <th

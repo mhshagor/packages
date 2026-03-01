@@ -15,7 +15,7 @@
             <x-sgd.form method="{{ $method }}">
                 <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                     <h3 class="text-base font-semibold leading-6 text-gray-900 mb-4" id="modal-title">
-                        {{ $title }}
+                        {{ Str::headline($title) }}
                     </h3>
                     <div class="space-y-4">
                         {{ $slot }}

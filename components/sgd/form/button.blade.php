@@ -127,7 +127,7 @@
                 :class="$iconClass ?? ''"
             />
         @endif
-        {{ $title ? __($text) : '' }}
+        {{ Str::headline($title ? __($text) : '') }}
         @if ($iconPosition === 'right')
             <x-sgd.form.icon
                 :icon="$icon ?? ''"
@@ -152,7 +152,7 @@
             />
         @endif
 
-        {{ $title ? __($text) : '' }}
+        {{ Str::headline($title ? __($text) : '') }}
 
         @if ($iconPosition === 'right')
             <x-sgd.form.icon
