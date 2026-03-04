@@ -1,0 +1,68 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "87c13541c0c128c329285ae7a48b82f8",
+    "packages": [
+        {
+            "name": "mhshagor/file-picker",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mhshagor/file-picker.git",
+                "reference": "f7c9bc8bce8650b7470285b9517cf451da061b2e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mhshagor/file-picker/zipball/f7c9bc8bce8650b7470285b9517cf451da061b2e",
+                "reference": "f7c9bc8bce8650b7470285b9517cf451da061b2e",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mhshagor\\FilePicker\\Providers\\PackageServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mhshagor\\FilePicker\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "M.H SHAGOR",
+                    "email": "srq001100@gmail.com"
+                }
+            ],
+            "description": "File Picker - Beautiful file picker for managing image/files",
+            "keywords": [
+                "file-picker"
+            ],
+            "support": {
+                "issues": "https://github.com/mhshagor/file-picker/issues",
+                "source": "https://github.com/mhshagor/file-picker/tree/v1.0.6"
+            },
+            "time": "2026-03-04T21:11:50+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {},
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^8.0"
+    },
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}
