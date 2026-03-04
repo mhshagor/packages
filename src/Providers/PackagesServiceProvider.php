@@ -11,7 +11,6 @@ class PackagesServiceProvider extends ServiceProvider
     protected $basePath = __DIR__ . '/../../';
 
     protected $packages = [
-        'file-picker',
         'components',
     ];
     
@@ -22,7 +21,6 @@ class PackagesServiceProvider extends ServiceProvider
             return;
         }
         $paths = match($package) {
-            'file-picker' => $this->publishFilePicker($package),
             'components' => $this->publishComponents($package),
             
             default => throw new \Exception("Unknown package: {$package}"),
@@ -34,21 +32,10 @@ class PackagesServiceProvider extends ServiceProvider
     private function publishAll()
     {
         $paths = [
-            ...$this->publishFilePicker('file-picker'),
             ...$this->publishComponents('components'),
         ];
         
         $this->publishes($paths, 'all');
-    }
-
-    private function publishFilePicker($package)
-    {
-        return [
-            $this->basePath . '/demo/file-picker.html' => resource_path('views/sgd/file-picker.html'),
-            $this->basePath . $package . '/components' => resource_path('views/components/sgd'),
-            $this->basePath . $package . '/js' => resource_path('js/sgd'),
-            $this->basePath . $package . '/css' => resource_path('css/sgd'),
-        ];
     }
 
     private function publishComponents($package)

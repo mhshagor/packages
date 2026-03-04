@@ -9,7 +9,8 @@
   "type": "library",
   "license": "MIT",
   "require": {
-    "php": "^8.0"
+    "php": "^8.0",
+    "mhshagor/file-picker": "^1.0"
   },
   "autoload": {
     "psr-4": {
