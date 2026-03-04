@@ -3,41 +3,15 @@
 namespace Mhshagor\LaravelComponents\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Blade;
 use Mhshagor\LaravelComponents\Commands\PublishAllCommand;
 
 class PackageServiceProvider extends ServiceProvider
 {
     protected $basePath = __DIR__ . '/../../';
 
-    protected $packages = [
-        'components',
-    ];
-    
-    private function publishPackage($package)
-    {
-        if($package === 'all') {
-            $this->publishAll();
-            return;
-        }
-        $paths = match($package) {
-            'components' => $this->publishComponents($package),
-            default => throw new \Exception("Unknown package: {$package}"),
-        };
-        
-        $this->publishes($paths, $package);
-    }
+    private const TAG_COMPONENTS = 'components';
 
-    private function publishAll()
-    {
-        $paths = [
-            ...$this->publishComponents('components'),
-        ];
-        
-        $this->publishes($paths, 'all');
-    }
-
-    private function publishComponents($package)
+    private function publishPaths(): array
     {
         return [
             $this->basePath . 'assets/demo' => resource_path('views/sgd'),
@@ -50,15 +24,17 @@ class PackageServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        foreach ($this->packages as $package) {
-            $this->publishPackage($package);
+        if (! $this->app->runningInConsole()) {
+            return;
         }
 
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                PublishAllCommand::class,
-            ]);
-        }
+        $publishPaths = $this->publishPaths();
+
+        $this->publishes($publishPaths, self::TAG_COMPONENTS);
+
+        $this->commands([
+            PublishAllCommand::class,
+        ]);
     }
     
     public function register()
